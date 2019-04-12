@@ -9,7 +9,7 @@ export default [
   },
   {
     key: 2,
-    name: '람박'
+    name: '람빅'
   },
   {
     key: 3,
