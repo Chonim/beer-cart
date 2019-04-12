@@ -1,8 +1,10 @@
 import Beer from './beer'
+import Purchase from './purchase'
 
 const api = (method, ...args) => {
   const path = {
-    ...Beer
+    ...Beer,
+    ...Purchase
   }
   return path[method](...args)
 }
