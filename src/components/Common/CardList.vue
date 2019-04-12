@@ -33,7 +33,7 @@ export default {
   },
   data () {
     return {
-      maxCards: 4
+      maxCards: 5
     }
   },
   computed: {
