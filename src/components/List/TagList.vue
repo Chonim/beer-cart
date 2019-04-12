@@ -33,13 +33,6 @@ export default {
         border: '1px solid #3369E8'
       }
     },
-    onButtonStyle () {
-      return {
-        color: '#fff',
-        backgroundColor: '#3369E8',
-        border: '1px solid #3369E8'
-      }
-    },
     checkedTags () {
       return this.tagList.filter(tag => tag.isChecked)
     }
@@ -51,10 +44,9 @@ export default {
         ...tag,
         isChecked: false
       }))
-      console.log(this.tagList)
     },
     getButtonStyle (isChecked) {
-      return isChecked ? this.onButtonStyle : this.offButtonStyle
+      return isChecked ? {} : this.offButtonStyle
     },
     toggleTag ({ key, isChecked }) {
       const matchedTag = this.tagList.find(tag => tag.key === key)
