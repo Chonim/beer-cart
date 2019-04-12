@@ -1,12 +1,26 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <beer-header />
     <router-view/>
   </div>
 </template>
+
+<script>
+import BeerHeader from '@/components/Header'
+
+export default {
+  name: 'BeerCart',
+  components: {
+    BeerHeader
+  }
+}
+</script>
+
+<style lang="scss">
+html, body {
+  margin: 0;
+}
+</style>
 
 <style lang="scss">
 #app {
