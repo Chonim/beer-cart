@@ -39,6 +39,9 @@ export default {
         backgroundColor: '#3369E8',
         border: '1px solid #3369E8'
       }
+    },
+    checkedTags () {
+      return this.tagList.filter(tag => tag.isChecked)
     }
   },
   methods: {
