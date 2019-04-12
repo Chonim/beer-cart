@@ -1,10 +1,12 @@
-import tagList from '@/assets/data/tags'
+import Axios from '@/plugins/axios'
+
+const endpoints = '/api'
 
 export default {
   getTags () {
-    // GET /api/tags mock
-    return new Promise((resolve, reject) => {
-      setTimeout(resolve(tagList), 200)
-    })
+    return Axios.get(`${endpoints}/tags`)
+  },
+  getBeers () {
+    return Axios.get(`${endpoints}/beers`)
   }
 }
