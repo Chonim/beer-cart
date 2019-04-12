@@ -67,7 +67,10 @@ export default {
   display: flex;
   align-items: center;
   .tag-entity {
-    margin-left: 8px;
+    margin-right: 8px;
+    &:first-child {
+      margin-left: 16px;
+    }
   }
 }
 </style>
