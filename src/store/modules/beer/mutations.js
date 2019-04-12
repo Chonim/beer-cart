@@ -13,5 +13,13 @@ export default {
     if (matchedItem && !matchedItem.inCart) {
       state.cartItems.splice(matchedItem, 1)
     }
+  },
+  emptyCart: (state) => {
+    state.cartItems = []
+    state.beerList = state.beerList.map(item => ({
+      ...item,
+      stock: item.stock + item.inCart,
+      inCart: 0
+    }))
   }
 }

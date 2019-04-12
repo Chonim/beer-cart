@@ -16,5 +16,8 @@ export default {
   substractFromCart: ({ commit }, payload) => {
     payload.amount = -1
     commit('updateCart', payload)
+  },
+  emptyCart: ({ commit }) => {
+    commit('emptyCart')
   }
 }
