@@ -9,11 +9,6 @@
       :alt="icon.alt"
       @click="$router.push({ name: icon.routeName })"
     >
-    <!-- <img
-      src="/static/img/cart.svg"
-      class="icon"
-      alt="List icon"
-    > -->
     <div
       class="cart-badge"
       v-show="cartItems.length"
