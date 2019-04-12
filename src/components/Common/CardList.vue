@@ -46,6 +46,7 @@ export default {
         height: '38px',
         borderRadius: '16px',
         boxSizing: 'border-box',
+        marginTop: '4px',
         marginBottom: '24px'
       }
     }
