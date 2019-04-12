@@ -49,8 +49,13 @@ export default {
         id: item.id,
         count: item.inCart
       }))
+      console.log('Items in cart: ')
+      console.table(this.getCartItems)
+      console.log('Payload: ')
+      console.table(payload)
       const result = await api('makePurchase', payload)
-      console.log(result)
+      console.log('Response from server: ')
+      console.table(result)
       this.$store.dispatch('beer/emptyCart')
     }
   }
