@@ -2,7 +2,7 @@
   <div class="empty-cart-wrapper">
     <img
       class="empty-cart"
-      src="/static/img/empty-cart.svg"
+      src="/static/icons/empty-cart.svg"
       alt="Empty Cart"
     >
     <h1>카트가 비었습니다</h1>

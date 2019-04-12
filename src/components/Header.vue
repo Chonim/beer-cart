@@ -5,7 +5,7 @@
       class="icon"
       v-for="icon in icons"
       :key="icon.routeName"
-      :src="`/static/img/${icon.icon}${getIconSuffix(icon.routeName)}.svg`"
+      :src="`/static/icons/${icon.icon}${getIconSuffix(icon.routeName)}.svg`"
       :alt="icon.alt"
       @click="$router.push({ name: icon.routeName })"
     >
