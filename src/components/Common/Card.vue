@@ -72,7 +72,7 @@ export default {
       'substractFromCart'
     ]),
     getStockDetail ({ stock, inCart }) {
-      let stockDetail = `수량 ${inCart}`
+      let stockDetail = inCart > 0 ? `수량 ${inCart}` : ''
       if (this.$route.name === 'BeerList') {
         stockDetail = `재고 ${stock} ${stockDetail}`
       }
