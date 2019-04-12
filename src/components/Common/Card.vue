@@ -12,18 +12,63 @@
         <div class="beer-price">{{ item.price }}</div>
         <div class="price-unit">원</div>
       </div>
-      <div class="beer-stock">{{ item.stock }}</div>
+      <div class="beer-stock">{{ getStockDetail(item) }}</div>
+    </div>
+    <div class="button-wrapper">
+      <beer-button
+        v-if="item.inCart"
+        button-text="빼기"
+        :button-style="substractFromCartButtonStyle"
+        @click="substractFromCart(item)"
+      />
+      <beer-button
+        button-text="담기"
+        :button-style="addToCartButtonStyle"
+        :is-disabled="!item.stock"
+        @click="addToCart(item)"
+      />
     </div>
   </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+import BeerButton from '@/components/Common/Button'
+
 export default {
   name: 'BeerCard',
   props: {
     item: {
       type: Object,
       required: true
+    }
+  },
+  components: {
+    BeerButton
+  },
+  computed: {
+    substractFromCartButtonStyle () {
+      return {
+        minWidth: '20px',
+        color: '#3A4961',
+        backgroundColor: '#eee',
+        border: '1px solid #eee'
+      }
+    },
+    addToCartButtonStyle () {
+      return {
+        minWidth: '20px',
+        marginLeft: '8px'
+      }
+    }
+  },
+  methods: {
+    ...mapActions('beer', [
+      'addToCart',
+      'substractFromCart'
+    ]),
+    getStockDetail ({ stock, inCart }) {
+      return `재고 ${stock} 수량 ${inCart}`
     }
   }
 }
@@ -41,6 +86,7 @@ export default {
   padding: 12px;
   box-sizing: border-box;
   display: flex;
+  position: relative;
   .beer-thumbnail {
     width: 56px;
     height: 80px;
@@ -61,7 +107,7 @@ export default {
     }
     .beer-price-wrapper {
       display: flex;
-      line-height: 16px;
+      line-height: 18px;
       .beer-price {
         font-weight: 600;
         margin-right: 4px;
@@ -70,6 +116,15 @@ export default {
         font-size: 12px;
       }
     }
+    .beer-stock {
+      font-size: 14px;
+    }
+  }
+  .button-wrapper {
+    position: absolute;
+    display: flex;
+    right: 12px;
+    bottom: 12px;
   }
 }
 </style>
