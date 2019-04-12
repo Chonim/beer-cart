@@ -9,7 +9,7 @@
       <div class="beer-name">{{ item.name }}</div>
       <div class="beer-tags">{{ item.tags.map(tag => tag.name).join(', ') }}</div>
       <div class="beer-price-wrapper">
-        <div class="beer-price">{{ item.price }}</div>
+        <div class="beer-price">{{ item.price.toLocaleString() }}</div>
         <div class="price-unit">원</div>
       </div>
       <div class="beer-stock">{{ getStockDetail(item) }}</div>
