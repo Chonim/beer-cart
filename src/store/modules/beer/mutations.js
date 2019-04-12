@@ -10,5 +10,8 @@ export default {
     if (!matchedItem) {
       state.cartItems.push(payload)
     }
+    if (matchedItem && !matchedItem.inCart) {
+      state.cartItems.splice(matchedItem, 1)
+    }
   }
 }

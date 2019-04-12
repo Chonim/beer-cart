@@ -17,11 +17,12 @@
     <div class="button-wrapper">
       <beer-button
         v-if="item.inCart"
-        button-text="빼기"
+        :button-text="removeButtonName"
         :button-style="substractFromCartButtonStyle"
         @click="substractFromCart(item)"
       />
       <beer-button
+        v-if="$route.name === 'BeerList'"
         button-text="담기"
         :button-style="addToCartButtonStyle"
         :is-disabled="!item.stock"
@@ -60,6 +61,9 @@ export default {
         minWidth: '20px',
         marginLeft: '8px'
       }
+    },
+    removeButtonName () {
+      return this.$route.name === 'BeerList' ? '빼기' : '취소'
     }
   },
   methods: {
@@ -68,7 +72,11 @@ export default {
       'substractFromCart'
     ]),
     getStockDetail ({ stock, inCart }) {
-      return `재고 ${stock} 수량 ${inCart}`
+      let stockDetail = `수량 ${inCart}`
+      if (this.$route.name === 'BeerList') {
+        stockDetail = `재고 ${stock} ${stockDetail}`
+      }
+      return stockDetail
     }
   }
 }
