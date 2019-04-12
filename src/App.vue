@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <beer-header />
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
