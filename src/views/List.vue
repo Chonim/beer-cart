@@ -1,10 +1,17 @@
 <template>
-  <div class="">Beer List</div>
+  <div class="">
+    <tag-list />
+  </div>
 </template>
 
 <script>
+import TagList from '@/components/List/TagList'
+
 export default {
-  name: 'BeerList'
+  name: 'BeerList',
+  components: {
+    TagList
+  }
 }
 </script>
 
