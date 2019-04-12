@@ -1,5 +1,9 @@
 # beer-cart
 
+## Demo
+
+[https://beer-cart.firebaseapp.com/](https://beer-cart.firebaseapp.com/)
+
 ## Project setup
 ```
 yarn install
