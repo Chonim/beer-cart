@@ -43,5 +43,9 @@ $button-height: 28px;
   padding-left: 12px;
   padding-right: 12px;
   box-sizing: content-box;
+  &:disabled {
+    color: grey;
+    background-color: #c1c1c1;
+  }
 }
 </style>
