@@ -1,16 +1,18 @@
 <template>
   <div>
-    <div v-if="cartItems.length">Cart Itemsss!!</div>
+    <cart-list v-if="$store.getters['beer/getCartLength']" />
     <cart-empty v-else/>
   </div>
 </template>
 
 <script>
+import CartList from '@/components/Cart/CartList'
 import CartEmpty from '@/components/Cart/Empty'
 
 export default {
   name: 'BeerCartView',
   components: {
+    CartList,
     CartEmpty
   },
   data () {
