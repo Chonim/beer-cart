@@ -11,8 +11,8 @@
     >
     <div
       class="cart-badge"
-      v-show="cartItems.length"
-    >{{ cartItems.length }}</div>
+      v-show="getCartLength"
+    >{{ getCartLength }}</div>
   </header>
 </template>
 
@@ -34,6 +34,11 @@ export default {
           routeName: 'BeerCart'
         }
       ]
+    }
+  },
+  computed: {
+    getCartLength () {
+      return this.$store.getters['beer/getCartLength']
     }
   },
   methods: {
