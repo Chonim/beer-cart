@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div>
     <div v-if="cartItems.length">Cart Itemsss!!</div>
     <cart-empty v-else/>
   </div>
@@ -9,7 +9,7 @@
 import CartEmpty from '@/components/Cart/Empty'
 
 export default {
-  name: 'BeerCart',
+  name: 'BeerCartView',
   components: {
     CartEmpty
   },

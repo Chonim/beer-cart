@@ -1,16 +1,19 @@
 <template>
-  <div class="">
+  <div>
     <tag-list />
+    <beer-list />
   </div>
 </template>
 
 <script>
 import TagList from '@/components/List/TagList'
+import BeerList from '@/components/List/BeerList'
 
 export default {
-  name: 'BeerList',
+  name: 'BeerListView',
   components: {
-    TagList
+    TagList,
+    BeerList
   }
 }
 </script>

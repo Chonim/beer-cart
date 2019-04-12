@@ -12,6 +12,10 @@ export default {
   name: 'BeerCart',
   components: {
     BeerHeader
+  },
+  created () {
+    this.$store.dispatch('beer/fetchBeers')
+    this.$store.dispatch('tag/fetchTags')
   }
 }
 </script>

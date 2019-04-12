@@ -1,7 +1,7 @@
 <template>
   <div class="tag-list-wrapper">
     <beer-button
-      v-for="tag in tagList"
+      v-for="tag in getTagList"
       class="tag-entity"
       :key="tag.key"
       :button-text="tag.name"
@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import api from '@/api'
+import { mapGetters, mapActions } from 'vuex'
 import BeerButton from '@/components/Common/Button'
 
 export default {
@@ -26,6 +26,7 @@ export default {
     }
   },
   computed: {
+    ...mapGetters('tag', ['getTagList']),
     offButtonStyle () {
       return {
         color: '#3369E8',
@@ -38,23 +39,10 @@ export default {
     }
   },
   methods: {
-    async getTags () {
-      const tagList = await api('getTags')
-      this.tagList = tagList.map(tag => ({
-        ...tag,
-        isChecked: false
-      }))
-    },
+    ...mapActions('tag', ['toggleTag']),
     getButtonStyle (isChecked) {
       return isChecked ? {} : this.offButtonStyle
-    },
-    toggleTag ({ key, isChecked }) {
-      const matchedTag = this.tagList.find(tag => tag.key === key)
-      this.$set(matchedTag, 'isChecked', !isChecked)
     }
-  },
-  created () {
-    this.getTags()
   }
 }
 </script>
