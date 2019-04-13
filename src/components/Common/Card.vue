@@ -18,8 +18,8 @@
       <beer-button
         v-if="item.inCart"
         :button-text="removeButtonName"
-        :button-style="substractFromCartButtonStyle"
-        @click="substractFromCart(item)"
+        :button-style="subtractFromCartButtonStyle"
+        @click="subtractFromCart(item)"
       />
       <beer-button
         v-if="$route.name === 'BeerList'"
@@ -48,7 +48,7 @@ export default {
     BeerButton
   },
   computed: {
-    substractFromCartButtonStyle () {
+    subtractFromCartButtonStyle () {
       return {
         minWidth: '20px',
         color: '#3A4961',
@@ -69,7 +69,7 @@ export default {
   methods: {
     ...mapActions('beer', [
       'addToCart',
-      'substractFromCart'
+      'subtractFromCart'
     ]),
     getStockDetail ({ stock, inCart }) {
       let stockDetail = inCart > 0 ? `수량 ${inCart}` : ''

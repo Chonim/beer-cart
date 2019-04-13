@@ -13,7 +13,7 @@ export default {
     payload.amount = 1
     commit('updateCart', payload)
   },
-  substractFromCart: ({ commit }, payload) => {
+  subtractFromCart: ({ commit }, payload) => {
     payload.amount = -1
     commit('updateCart', payload)
   },
