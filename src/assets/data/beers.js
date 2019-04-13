@@ -79,4 +79,17 @@ export default [{
   }],
   price: 10000,
   stock: 3
+}, {
+  id: 6,
+  name: 'Stella Artois',
+  image: 'stella-artois.jpeg',
+  tags: [{
+    key: 0,
+    name: '라거'
+  }, {
+    key: 4,
+    name: '수입맥주'
+  }],
+  price: 6000,
+  stock: 8
 }]
