@@ -2,7 +2,7 @@
 
 ## Demo
 
-[https://beer-cart.firebaseapp.com/](https://beer-cart.firebaseapp.com/)
+[https://beer-cart.netlify.com/](https://beer-cart.netlify.com/)
 
 ## Project setup
 ```
