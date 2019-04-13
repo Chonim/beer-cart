@@ -16,6 +16,7 @@
 <script>
 import { mapGetters } from 'vuex'
 import api from '@/api'
+import { logger } from '@/utils/logger'
 import { getTotalAmount, getTotalPrice } from '@/utils/total-calculator'
 import BeerCardList from '@/components/Common/CardList'
 import BeerButton from '@/components/Common/Button'
@@ -49,13 +50,10 @@ export default {
         id: item.id,
         count: item.inCart
       }))
-      console.log('Items in cart: ')
-      console.table(this.getCartItems)
-      console.log('Payload: ')
-      console.table(payload)
+      logger('Items in cart: ', this.getCartItems)
+      logger('Payload: ', payload)
       const result = await api('makePurchase', payload)
-      console.log('Response from server: ')
-      console.table(result)
+      logger('Response from server: ', result)
       this.$store.dispatch('beer/emptyCart')
     }
   }
