@@ -46,6 +46,7 @@ $button-height: 28px;
   &:disabled {
     color: grey;
     background-color: #c1c1c1;
+    border: 1px solid #ccc;
   }
 }
 </style>
