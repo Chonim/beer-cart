@@ -1,6 +1,6 @@
 <template>
   <button
-    class="beer-button"
+    class="box-shadow beer-button"
     :disabled="isDisabled"
     :style="{ ...buttonStyle }"
     @click="$emit('click')"

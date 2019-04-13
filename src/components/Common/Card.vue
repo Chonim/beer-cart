@@ -1,5 +1,5 @@
 <template>
-  <div class="beer-card-wrapper">
+  <div class="box-shadow beer-card-wrapper">
     <img
       class="beer-thumbnail"
       :src="`/static/img/${item.image}`"
@@ -95,6 +95,7 @@ export default {
   box-sizing: border-box;
   display: flex;
   position: relative;
+  transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
   .beer-thumbnail {
     width: 56px;
     height: 80px;
