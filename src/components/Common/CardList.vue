@@ -10,12 +10,13 @@
       v-show="maxCards < cardList.length"
       button-text="더보기 +"
       :button-style="moreButtonStyle"
-      @click="maxCards += 5"
+      @click="maxCards += itemPerPage"
     />
   </div>
 </template>
 
 <script>
+import { ITEM_PER_PAGE } from '@/config'
 import BeerCard from '@/components/Common/Card'
 import BeerButton from '@/components/Common/Button'
 
@@ -33,7 +34,14 @@ export default {
   },
   data () {
     return {
-      maxCards: 5
+      itemPerPage: ITEM_PER_PAGE, // bind for access from html template
+      maxCards: ITEM_PER_PAGE
+    }
+  },
+  watch: {
+    cardList () {
+      // initialize the number of max cards on list change
+      this.maxCards = ITEM_PER_PAGE
     }
   },
   computed: {
