@@ -76,6 +76,9 @@ export default {
       if (this.$route.name === 'BeerList') {
         stockDetail = `재고 ${stock} ${stockDetail}`
       }
+      if (!stock && !inCart) {
+        stockDetail = '품절'
+      }
       return stockDetail
     }
   }
