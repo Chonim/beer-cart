@@ -44,6 +44,7 @@ export default {
         fontWeight: '600',
         backgroundColor: '#fff',
         height: '38px',
+        border: '1px solid #dedede',
         borderRadius: '16px',
         boxSizing: 'border-box',
         marginTop: '4px',
