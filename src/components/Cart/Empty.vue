@@ -36,7 +36,7 @@ export default {
 
 <style lang="scss" scoped>
 .empty-cart-wrapper {
-  margin-top: 50%;
+  margin-top: 20%;
   overflow: hidden;
   .empty-cart {
     height: 56px;
