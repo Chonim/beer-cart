@@ -4,6 +4,11 @@
 
 [https://beer-cart.netlify.com/](https://beer-cart.netlify.com/)
 
+## Project download
+```
+git clone https://github.com/Chonim/beer-cart.git
+```
+
 ## Project setup
 ```
 yarn install
