@@ -37,7 +37,7 @@ $button-height: 28px;
   width: auto;
   color: #fff;
   background-color: #3369E8;
-  border: '1px solid #3369E8';
+  border: 1px solid #3369E8;
   border-radius: 4px;
   font-size: 12px;
   padding-left: 12px;
