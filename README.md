@@ -1,4 +1,4 @@
-# beer-cart
+# Beer Cart
 
 ## Demo
 
